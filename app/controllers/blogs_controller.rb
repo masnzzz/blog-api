@@ -3,4 +3,8 @@ class BlogsController < ApplicationController
     blogs = Blog.all
     render json: blogs
   end
+
+  def show
+    blog = Blog.find(params[:id])
+    render json: blog
 end
