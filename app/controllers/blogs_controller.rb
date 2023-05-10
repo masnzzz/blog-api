@@ -7,4 +7,14 @@ class BlogsController < ApplicationController
   def show
     blog = Blog.find(params[:id])
     render json: blog
+  end
+
+  def create
+    Blog.create(blog_params)
+    head :created
+  end
+
+  def blog_params
+    params.require(:blog).permit(:title, :contents)
+  end
 end
