@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { axiosInstance } from "../utils/axios";
 
 const CreateBlog = () => {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
+  const navigate = useNavigate();
+
+  const onClick = async () => {
+    await axiosInstance.post("/blogs", { title, contents });
+    navigate("/blogs", { replace: true });
+  };
+
   return (
     <div style={{ margin: "auto", width: "1000px" }}>
       <h1>ブログ作成画面</h1>
@@ -28,6 +36,10 @@ const CreateBlog = () => {
           onChange={(element) => setContents(element.target.value)}
           style={{ width: "500px", height: "300px" }}
         />
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <button onClick={onClick}>記事を作成する</button>
       </div>
     </div>
   );
