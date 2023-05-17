@@ -12,7 +12,7 @@ const Blog = () => {
       setBlog(response.data);
     };
     f();
-  }, []);
+  }, [params.id]);
   return (
     <div style={{ margin: "auto", width: "1000px" }}>
       <h1>ブログ詳細画面</h1>
