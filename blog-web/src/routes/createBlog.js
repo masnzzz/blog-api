@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { axiosInstance } from "../utils/axios";
+import { axiosInstance } from "../utils/axios.js";
 
 const CreateBlog = () => {
   const [title, setTitle] = useState("");
