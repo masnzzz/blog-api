@@ -26,7 +26,7 @@ const CreateBlog = () => {
         <input
           value={title}
           onChange={(element) => setTitle(element.target.value)}
-          style={{ width: "500px", height: "300px" }}
+          style={{ width: "500px" }}
         />
       </div>
       <h2>本文を入力してください</h2>
